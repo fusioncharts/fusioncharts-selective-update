@@ -6,7 +6,7 @@ FusionCharts.register('module', ['private', 'modules.renderer.js-extension',
             extend2 = lib.extend2;
 
         FusionCharts.register('component', ['extension', 'update', {
-            type : 'mscolumn',
+            type : 'mscartesian',
 
             inhereitBaseExtension : true,
 
