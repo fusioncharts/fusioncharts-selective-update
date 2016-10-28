@@ -67,7 +67,7 @@ describe('selective-update', function () {
         });
 
         var caption = revenueChart.apiInstance.components.caption.components.text,
-            isMatch = (caption === 'My Caption') ? true : false;
+            isMatch = (caption === 'My Caption');
 
         expect(isMatch).to
             .equal(true);
@@ -81,12 +81,12 @@ describe('selective-update', function () {
         });
 
         var subCaption = revenueChart.apiInstance.components.subCaption.graphics.subCaptionElement.attrs.text,
-            isMatch = (subCaption === 'My Sub Caption') ? true : false;
+            isMatch = (subCaption === 'My Sub Caption');
 
         expect(isMatch).to
             .equal(true);
     });
-    it('should change data in dataset 0 or this test will fail', function () {
+    it('should change data in dataset[0] to 492000 or this test will fail', function () {
         // To update the chart caption
         revenueChart.update({
             dataset: [{
@@ -97,7 +97,7 @@ describe('selective-update', function () {
         });
 
         var dataValue = revenueChart.apiInstance.components.dataset[0].JSONData.data[0].value,
-            isMatch = (dataValue === 492000) ? true : false;
+            isMatch = (dataValue === 492000);
 
         expect(isMatch).to
             .equal(true);
