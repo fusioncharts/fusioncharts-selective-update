@@ -24,6 +24,9 @@ gulp.task('scripts',['clean-dist'], function() {
     .pipe(gulp.dest('./dist/')),
     gulp.src(['test/*.js'])
     .pipe(concat('alltest.js'))
+    .pipe(gulp.dest('./dist/')),
+    gulp.src(['src/*.js'])
+    .pipe(concat('src.js'))
     .pipe(gulp.dest('./dist/'));
 });
 

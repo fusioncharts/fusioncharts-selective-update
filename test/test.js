@@ -9,6 +9,7 @@ var data =
                 "xAxisname": "Quarter",
                 "yAxisName": "Revenues (In USD)",
                 "numberPrefix": "$",
+                "animation":"0",
                 "plotFillAlpha" : "80",
             },
             "categories": [

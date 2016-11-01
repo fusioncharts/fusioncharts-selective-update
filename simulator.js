@@ -1,13 +1,14 @@
-var page = require("webpage").create();  
-var args = require('system').args;
+var page = require("webpage").create(),
+    args = require('system').args,
+    //pass in the name of the file that contains your tests
+    testFile = "./dist/alltest.js",
+    //all extensions in src folder
+    srcFiles = "./dist/src.js",
+    //pass in the url you are testing
+    pageAddress = 'about:blank';
 
-//pass in the name of the file that contains your tests
-var testFile = "./dist/alltest.js";  
-//pass in the url you are testing
-var pageAddress = 'about:blank';
-
-if (typeof testFile === 'undefined') { 
-    console.error("Did not specify a test file");
+if (typeof testFile === 'undefined' || typeof srcFiles === 'undefined') { 
+    console.error("Test Files or src files are not specified");
     phantom.exit();
 }
 
@@ -27,7 +28,7 @@ page.open(pageAddress, function(status) {
     //Inject Fusioncharts modules
     //page.injectJs("./node_modules/fusioncharts/fusioncharts.js");
     page.injectJs("./dist/fc.js");
-    page.injectJs("src/update.js");
+    page.injectJs(srcFiles);
 
     //inject your test reporter
     page.injectJs("reporter.js");
